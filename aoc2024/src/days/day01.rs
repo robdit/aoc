@@ -8,7 +8,10 @@ pub fn solve() {
     let mut right: Vec<usize> = Vec::new();
     let mut tot = 0;
     for line in &lines {
-        let parts = line.split_ascii_whitespace().map(|x| x.parse::<usize>().unwrap()).collect::<Vec<usize>>();
+        let parts = line
+            .split_ascii_whitespace()
+            .map(|x| x.parse::<usize>().unwrap())
+            .collect::<Vec<usize>>();
         left.push(parts[0]);
         right.push(parts[1]);
     }
@@ -20,7 +23,7 @@ pub fn solve() {
 
     for r in &right {
         if let Some(v) = occ.get(r) {
-            occ.insert(*r, v+1);
+            occ.insert(*r, v + 1);
         } else {
             occ.insert(*r, 1);
         }
