@@ -13,14 +13,14 @@ pub fn solve() {
             .replace(": ", ";")
             .replace("; ", ";")
             .replace(", ", ",")
-            .split(";")
+            .split(';')
             .map(std::string::ToString::to_string)
             .collect();
         let id = game[0].parse::<u32>().unwrap();
         tot += id;
         for pull in game[1..].iter() {
-            for cubes in pull.split(",") {
-                let data: Vec<_> = cubes.split(" ").collect();
+            for cubes in pull.split(',') {
+                let data: Vec<_> = cubes.split(' ').collect();
                 let num = data[0].parse::<u32>().unwrap();
                 let color = data[1];
                 let idx: usize = match color {

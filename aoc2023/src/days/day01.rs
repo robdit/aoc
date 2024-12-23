@@ -16,8 +16,8 @@ pub fn solve() {
             } else {
                 buf.push(c);
                 let mut ret: u32 = 0;
-                for i in 0..numbs.len() {
-                    if buf.contains(numbs[i]) {
+                for (i, numb) in numbs.iter().enumerate() {
+                    if buf.contains(numb) {
                         buf.clear();
                         buf.push(c);
                         ret = i as u32 + 1;
@@ -35,10 +35,10 @@ pub fn solve() {
                 last = Some(v);
             }
         }
-        if last.is_none() {
-            tot += (first.expect("first to be set") * 10) + first.expect("first to be set");
+        if let Some(last_val) = last {
+            tot += (first.expect("first to be set") * 10) + last_val;
         } else {
-            tot += (first.expect("first to be set") * 10) + last.expect("last to be set");
+            tot += (first.expect("first to be set") * 10) + first.expect("first to be set");
         }
     }
     println!("{tot:?}");
