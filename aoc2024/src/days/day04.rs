@@ -1,5 +1,4 @@
 #![allow(clippy::needless_return)]
-#[allow(dead_code)]
 
 fn word_search(
     needle: &[char],
@@ -30,6 +29,7 @@ fn word_search(
     );
 }
 
+#[allow(dead_code)]
 pub fn solve() {
     let lines = common::read_file("./src/days/data/day04.txt");
     let mut grid: Vec<Vec<char>> = Vec::new();

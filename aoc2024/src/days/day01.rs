@@ -1,6 +1,7 @@
 #![allow(clippy::needless_return)]
 
 use std::{collections::HashMap, iter::zip};
+
 #[allow(dead_code)]
 pub fn solve() {
     let lines = common::read_file("./src/days/data/day01.txt");

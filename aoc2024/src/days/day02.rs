@@ -1,5 +1,4 @@
 #![allow(clippy::needless_return)]
-#[allow(dead_code)]
 
 fn safe_check(levels: &[isize]) -> bool {
     let mut dir = 0;
@@ -24,6 +23,8 @@ fn safe_check(levels: &[isize]) -> bool {
     }
     return true;
 }
+
+#[allow(dead_code)]
 pub fn solve() {
     let lines = common::read_file("./src/days/data/day02.txt");
     let mut tot = 0;
